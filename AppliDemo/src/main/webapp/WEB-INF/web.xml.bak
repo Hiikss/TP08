@@ -10,14 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>PremiereServletConfigurationwebXML</servlet-name>
-  	<servlet-class>fr.eni.javaee.module2.PremiereServletConfigurationwebXML</servlet-class>
+  	<servlet-name>PremiereServletConfigurationWebXML</servlet-name>
+  	<servlet-class>fr.eni.javaee.module2.PremiereServletConfigurationWebXML</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>PremiereServletConfigurationwebXML</servlet-name>
-  	<url-pattern>/modules/module2/PremiereServletConfigurationwebXML</url-pattern>
+  	<servlet-name>PremiereServletConfigurationWebXML</servlet-name>
+  	<url-pattern>/modules/module2/PremiereServletConfigurationWebXML</url-pattern>
   </servlet-mapping>
 </web-app>
-
 
 
