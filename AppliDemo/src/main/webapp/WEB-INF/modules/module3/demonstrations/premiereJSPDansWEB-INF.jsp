@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Ceci est ma première JSP dans le WEB-INF</h1>
-	<a href="demonstration1.html">Retour</a>
+	<a href="http://localhost:8080/AppliDemo/modules/module3/demonstrations/demonstration1.html">Retour</a>
 </body>
 </html>
