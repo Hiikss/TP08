@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletRechercheNombre
  */
-@WebServlet("/ServletRechercheNombre")
+@WebServlet(
+		urlPatterns = "/ServletRechercheNombre",
+		initParams =
+			{
+					@WebInitParam(description = "borne minimale", name = "BORNE_MIN", value = "5"),
+					@WebInitParam(description = "borne maximale", name = "BORNE_MAX", value = "10")
+			}
+	)
 public class ServletRechercheNombre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -21,6 +29,12 @@ public class ServletRechercheNombre extends HttpServlet {
 	private int max = 10;
 	
 	private Random rdm = new Random();
+	
+	@Override
+	public void init() throws ServletException {
+		this.min = Integer.parseInt(this.getInitParameter("BORNE_MIN"));
+		this.max = Integer.parseInt(this.getInitParameter("BORNE_MAX"));
+	}
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
