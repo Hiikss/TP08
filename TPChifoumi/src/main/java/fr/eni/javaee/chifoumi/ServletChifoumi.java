@@ -38,7 +38,8 @@ public class ServletChifoumi extends HttpServlet {
 		request.setAttribute("resultat", result);
 		request.setAttribute("choixJoueur", choixJoueur);
 		request.setAttribute("choixServ", choixServ);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/resultat.jsp");
+		response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/resulta.jsp");
 		rd.forward(request, response);
 	}
 
