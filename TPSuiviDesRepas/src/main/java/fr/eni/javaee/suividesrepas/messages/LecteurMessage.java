@@ -26,7 +26,7 @@ public abstract class LecteurMessage {
 	 * @param code
 	 * @return
 	 */
-	public static  String getMessageErreur(int code)
+	public static String getMessageErreur(int code)
 	{
 		String message="";
 		try

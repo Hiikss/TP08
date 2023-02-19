@@ -44,35 +44,32 @@
 					if(listeRepas!=null && listeRepas.size()>0)
 					{
 				%>
-						<tbody>
+						<tbody class="accordion" id="tableAccordion">
 							<%
 							for(Repas repas : listeRepas)
 							{
 							%>
-								<tr>
+								<tr class="card-header" id="heading<%=repas.getId()%>">
 									<td><%=repas.getDate()%></td>
 									<td><%=repas.getHeure()%></td>
-									
-									<td>détail</td>
+									<td data-toggle="collapse" data-target="#data<%=repas.getId()%>" aria-expanded="false" aria-controls="data<%=repas.getId()%>"><a href="javascript:void(0)">détail</a></td>
 								</tr>
-
-									<tr>
-										<td colspan="3">
-											<ul>
-												<%
-												for(Aliment aliment:repas.getAliments())
-												{
-												%>
-													<li><%=aliment.getNom()%></li>
-												<%
-												}
-												%>
-											</ul>
-										</td>
-									</tr>
+								<tr id="data<%=repas.getId()%>" class="collapse" aria-labelledby="heading<%=repas.getId()%>" data-parent="#tableAccordion">
+									<td colspan="3" class="card-body">
+										<ul>
+											<%
+											for(Aliment aliment:repas.getAliments())
+											{
+											%>
+												<li><%=aliment.getNom()%></li>
+											<%
+											}
+											%>
+										</ul>
+									</td>
+								</tr>
 							<%
 								}
-							
 							%>
 						</tbody>
 				<%

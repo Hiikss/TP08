@@ -20,9 +20,10 @@ public class RepasManager {
 	
 	public Repas ajouterRepas(LocalDate date, LocalTime heure, List<String> listeAliments) throws BusinessException {
 		BusinessException be = new BusinessException();
+		this.validerDate(date, heure, be);
+		this.validerAliments(listeAliments, be);
 		
 		Repas repas = null;
-		
 		if(!be.hasErreurs()) {
 			repas = new Repas();
 			repas.setDate(date);
@@ -38,7 +39,21 @@ public class RepasManager {
 		return repas;
 	}
 	
+
 	public List<Repas> selectRepas() throws BusinessException {
 		return this.repasDAO.select();
+	}
+
+	private void validerDate(LocalDate date, LocalTime heure, BusinessException be) {
+		if(date==null || heure==null || date.isAfter(LocalDate.now()) && heure.isAfter(LocalTime.now())) {
+			be.ajouterErreur(CodesResultatBLL.REGLE_REPAS_DATE_ERREUR);
+		}
+	}
+	
+	private void validerAliments(List<String> listeAliments, BusinessException be) {
+		if(listeAliments==null || listeAliments.size()==0) {
+			be.ajouterErreur(CodesResultatBLL.REGLE_REPAS_ALIMENTS_ERREUR);
+		}
+		
 	}
 }
