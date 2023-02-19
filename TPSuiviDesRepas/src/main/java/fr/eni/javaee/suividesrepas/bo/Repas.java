@@ -1,11 +1,14 @@
 package fr.eni.javaee.suividesrepas.bo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Repas {
+public class Repas implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private int id;
 	private LocalDate date;
@@ -16,11 +19,20 @@ public class Repas {
 		this.aliments = new ArrayList<>();
 	}
 	
-	public Repas(int id, LocalDate date, LocalTime heure, List<Aliment> aliments) {
-		this.id = id;
+	public Repas(LocalDate date, LocalTime heure, List<Aliment> aliments) {
+		super();
 		this.date = date;
 		this.heure = heure;
 		this.aliments = aliments;
+	}
+	
+	public Repas(int id, LocalDate date, LocalTime heure, List<Aliment> aliments) {
+		this(date, heure, aliments);
+		this.id = id;
+	}
+	
+	public Repas(int id, LocalDate date, LocalTime heure) {
+		this(id, date, heure, new ArrayList<>());
 	}
 
 	public int getId() {

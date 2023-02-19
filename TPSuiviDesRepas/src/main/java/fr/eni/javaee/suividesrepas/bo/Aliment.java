@@ -1,13 +1,22 @@
 package fr.eni.javaee.suividesrepas.bo;
 
-public class Aliment {
+import java.io.Serializable;
+
+public class Aliment implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	
 	private int id;
 	private String nom;
 	
-	public Aliment(int id, String nom) {
-		this.id = id;
+	public Aliment(String nom) {
+		super();
 		this.nom = nom;
+	}
+	
+	public Aliment(int id, String nom) {
+		this(nom);
+		this.id = id;
 	}
 
 	public int getId() {
