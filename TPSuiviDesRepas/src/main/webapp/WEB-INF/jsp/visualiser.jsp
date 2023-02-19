@@ -11,7 +11,7 @@
 	<h1 class="text-center">HISTORIQUE</h1>
 	<div class="row mt-2">
 		<a href="<%=request.getContextPath()%>/ajout" class="col-4 offset-1 btn btn-outline-primary">Ajouter un nouveau repas</a>
-		<a href="<%=request.getContextPath()%>" class="col-4 offset-1 btn btn-outline-primary" role="button">Retour à l'accueil</a>
+		<a href="<%=request.getContextPath()%>/accueil" class="col-4 offset-1 btn btn-outline-primary" role="button">Retour à l'accueil</a>
 	</div>
 </body>
 </html>

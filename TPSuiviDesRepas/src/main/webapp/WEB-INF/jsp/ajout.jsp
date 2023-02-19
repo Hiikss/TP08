@@ -24,7 +24,7 @@
 		</div>
 		<div class="row mt-2">
 			<button type="submit" id="valider" class="col-2 offset-4 btn btn-outline-success">Valider</button>
-			<a href="<%=request.getContextPath()%>" class="col-2 offset-1 btn btn-outline-danger" role="button">Annuler</a>
+			<a href="<%=request.getContextPath()%>/accueil" class="col-2 offset-1 btn btn-outline-danger" role="button">Annuler</a>
 		</div>
 	</form>
 </body>
