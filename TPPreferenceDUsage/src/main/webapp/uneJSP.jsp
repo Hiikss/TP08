@@ -6,11 +6,9 @@
 
 <%
 	String couleur="noir";
-	//recherche en session
-	//Si la valeur existe en session, écrasez la valeur couleur par défaut
-	if(session.getAttribute("couleurPreferee")!=null)
+	if(session.getAttribute("couleurPref")!=null)
 	{
-		couleur=(String)session.getAttribute("couleurPreferee");
+		couleur=(String)session.getAttribute("couleurPref");
 	}
 %>
 
@@ -22,6 +20,6 @@
 </head>
 <body>
 	<p>Avec du contenu</p>
-	<a href="<%=response.encodeURL(request.getContextPath()+"/ServletGestionPreference")%>">Retour</a>
+	<a href="<%=response.encodeURL(request.getContextPath()+"/accueil")%>">Retour</a>
 </body>
 </html>

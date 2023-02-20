@@ -42,6 +42,6 @@
 		%>
 		<p>Vous êtes venu <%=cookieNbAcCookie.getValue()%> fois</p>
 	</div>
-	<a class="text-center" href="<%=response.encodeURL(request.getContextPath()+"/WEB-INF/jsp/uneJSP.jsp")%>">Une JSP</a>
+	<a class="text-center" href="<%=response.encodeURL(request.getContextPath()+"/uneJSP.jsp")%>">Une JSP</a>
 </body>
 </html>
