@@ -43,6 +43,12 @@
   	<error-code>500</error-code>
   	<location>/modules/module2/demonstrations/erreur500.html</location>
   </error-page>
+  
+  <context-param>
+  	<description>Un paramètre d'application</description>
+  	<param-name>EMAIL_ADMINISTRATEUR</param-name>
+  	<param-value>administrateur@monapplication.fr</param-value>
+  </context-param>
 </web-app>
 
 
