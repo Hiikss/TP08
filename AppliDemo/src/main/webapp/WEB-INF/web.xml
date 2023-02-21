@@ -49,6 +49,11 @@
   	<param-name>EMAIL_ADMINISTRATEUR</param-name>
   	<param-value>administrateur@monapplication.fr</param-value>
   </context-param>
+  
+  <error-page>
+  	<error-code>403</error-code>
+  	<location>/modules/module7/demonstrations/erreur403.html</location>
+  </error-page>
 </web-app>
 
 
